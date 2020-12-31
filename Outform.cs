@@ -19,35 +19,43 @@ namespace Prisoner
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void Outform_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
+            Application.Exit();
+        }
+        private void Outform_Load(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
+            string query;         
+            con.Open();
+            query = "Select * from Prisoners";
+
+            SqlCommand command = new SqlCommand(query, con);
+
+            //ad.SelectCommand = new SqlCommand(query, con);
+            SqlDataReader reader=command.ExecuteReader();
+            //dataGridView1.DataSource = reader;
+            
+            List<Criminal> list = new List<Criminal>();
+            while (reader.Read())
             {
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Random"].ConnectionString);
-                string query;
-                SqlCommand SqlCommand;
-                SqlDataReader reader;
-                SqlDataAdapter ad = new SqlDataAdapter();
-                con.Open();
-                query = "Select * from Criminals";
-
-                SqlCommand = new SqlCommand(query, con);
-
-                ad.SelectCommand = new SqlCommand(query, con);
-                reader = SqlCommand.ExecuteReader();
-
-                dataGridView1.DataSource = reader;
-                dataGridView1.DataBindings();
-  }
-
-            catch
-
-            {
-
-                MessageBox.Show("No Record Found");
-
+                Criminal c = new Criminal();
+                c.Name = reader["Name"].ToString();
+                c.PrisonerID = (int)reader["PrisonerID"];
+                c.Gender = reader["Gender"].ToString();
+                c.DateofBirth = reader["DateofBirth"].ToString();
+                c.CrimeDescription = reader["CrimeDescription"].ToString();
+                c.Punishment = reader["Punishment"].ToString();
+                c.CellNo = reader["CellNo"].ToString();
+                c.BloodGroup = reader["BloodGroup"].ToString();
+                c.Address = reader["Address"].ToString();
+                c.Counselor = reader["Counselor"].ToString();
+                list.Add(c);
             }
+            con.Close();
+            dataGridView1.DataSource = list;
 
         }
     }

@@ -29,7 +29,7 @@ namespace Prisoner
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Random"].ConnectionString);
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
             connection.Open();
             string gen = null;
             if (txtmale.Checked)
@@ -40,19 +40,21 @@ namespace Prisoner
             {
                 gen = txtfemale.Text;
             }
-            string sql = "INSERT INTO Criminals(Name,PriosnerId,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address)" +
+            string sql = "INSERT INTO Prisoners(Name,PriosnerId,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address)" +
                 " VALUES('"+txtname.Text+"','"+txtprisonerid.Text+"','"+gen+"','"+dob.Text+"','"+txtcrimedescription.Text+"','"+txtpunishment.Text+"','"+txtcellno.Text+"','"+txtbloodgroup.Text+"','"+txtaddress.Text+"')";
             SqlCommand command = new SqlCommand(sql, connection);
             command.ExecuteNonQuery();
-            connection.Close();
+           connection.Close();
             MessageBox.Show("Prisoner Added successfully!");
-            Outform f2 = new Outform();
+            
             
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Outform f2 = new Outform();
+            f2.Show();
+            this.Hide();
         }
 
         
