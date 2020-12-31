@@ -41,7 +41,7 @@ namespace Prisoner
                 gen = txtfemale.Text;
             }
             string sql = "INSERT INTO Prisoners(Name,PriosnerId,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address)" +
-                " VALUES('"+txtname.Text+"','"+txtprisonerid.Text+"','"+gen+"','"+dob.Text+"','"+txtcrimedescription.Text+"','"+txtpunishment.Text+"','"+txtcellno.Text+"','"+txtbloodgroup.Text+"','"+txtaddress.Text+"')";
+                " VALUES('"+txtname.Text+"','"+txtprisonerid.Text+"','"+gen+"','"+dob.Text+"','"+txtcrimedescription.Text+"','"+txtpunishment.Text+"','"+txtcellno.Text+"','"+txtbloodgroup.Text+"','"+txtaddress.Text+"','"+txtCounselor+"')";
             SqlCommand command = new SqlCommand(sql, connection);
             command.ExecuteNonQuery();
            connection.Close();
@@ -52,9 +52,7 @@ namespace Prisoner
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Outform f2 = new Outform();
-            f2.Show();
-            this.Hide();
+            
         }
 
         

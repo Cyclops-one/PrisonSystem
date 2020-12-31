@@ -21,5 +21,22 @@ namespace Prisoner
         {
             Application.Exit();
         }
+
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Guard guard = new Guard();
+            this.Hide();
+            guard.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

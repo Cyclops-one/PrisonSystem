@@ -70,10 +70,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(161, 240);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 240);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(638, 208);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 208);
             this.dataGridView1.TabIndex = 7;
             // 
             // radioButton1
@@ -81,10 +82,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(193, 161);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.Size = new System.Drawing.Size(102, 17);
             this.radioButton1.TabIndex = 8;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.Text = "ParticularPerson";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -92,10 +93,10 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(415, 161);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.Size = new System.Drawing.Size(136, 17);
             this.radioButton2.TabIndex = 9;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.Text = "AccordingToCounselor ";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // textBox1

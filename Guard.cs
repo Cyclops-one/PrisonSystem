@@ -55,11 +55,12 @@ namespace Prisoner
             SqlCommand command = new SqlCommand(query, c);
             SqlDataReader reader = command.ExecuteReader();
             List<Criminal> list = new List<Criminal>();
+            
             while (reader.Read())
             {
                 Criminal p = new Criminal();
                 p.Name = reader["Name"].ToString();
-                // p.PrisonerID = reader["PrisonerID"].ToString();
+                p.PrisonerID = reader["PrisonerID"].ToString();
                 p.Gender = reader["Gender"].ToString();
                 p.DateofBirth = reader["DateofBirth"].ToString();
                 p.CrimeDescription = reader["CrimeDescription"].ToString();

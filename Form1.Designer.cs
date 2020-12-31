@@ -50,6 +50,8 @@
             this.txtmale = new System.Windows.Forms.RadioButton();
             this.txtfemale = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCounselor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -258,11 +260,29 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Gender";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(148, 337);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Counselor";
+            // 
+            // txtCounselor
+            // 
+            this.txtCounselor.Location = new System.Drawing.Point(220, 334);
+            this.txtCounselor.Name = "txtCounselor";
+            this.txtCounselor.Size = new System.Drawing.Size(104, 20);
+            this.txtCounselor.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCounselor);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtfemale);
             this.Controls.Add(this.txtmale);
@@ -318,6 +338,8 @@
         private System.Windows.Forms.RadioButton txtmale;
         private System.Windows.Forms.RadioButton txtfemale;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtCounselor;
     }
 }
 
