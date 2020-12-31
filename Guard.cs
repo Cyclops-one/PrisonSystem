@@ -38,12 +38,20 @@ namespace Prisoner
 
         private void button3_Click(object sender, EventArgs e)//search
         {
-
+            string choice = null;
+            if (radioButton1.Checked)
+            {
+                choice = "PrisonerID";
+            }
+            else
+            {
+                choice = "CounSelor";
+            }
             SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
             c.Open();
             //Form1 f = new Form1();
 
-            string query = "Select * from Prisoners where PrisonerID='" + textBox1.Text + "'";
+            string query = "Select * from Prisoners where " + choice + "='" + textBox1.Text + "'";
             SqlCommand command = new SqlCommand(query, c);
             SqlDataReader reader = command.ExecuteReader();
             List<Criminal> list = new List<Criminal>();
@@ -51,7 +59,7 @@ namespace Prisoner
             {
                 Criminal p = new Criminal();
                 p.Name = reader["Name"].ToString();
-               // p.PrisonerID = reader["PrisonerID"].ToString();
+                // p.PrisonerID = reader["PrisonerID"].ToString();
                 p.Gender = reader["Gender"].ToString();
                 p.DateofBirth = reader["DateofBirth"].ToString();
                 p.CrimeDescription = reader["CrimeDescription"].ToString();
@@ -59,13 +67,19 @@ namespace Prisoner
                 p.BloodGroup = reader["BloodGroup"].ToString();
                 p.Address = reader["Address"].ToString();
                 p.Counselor = reader["Counselor"].ToString();
-                
+
 
                 list.Add(p);
             }
             c.Close();
             dataGridView1.DataSource = list;
             reader.Close();
+            textBox1.Text = null;
+        }
+
+        private void Guard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

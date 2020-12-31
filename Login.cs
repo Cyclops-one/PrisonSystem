@@ -23,9 +23,9 @@ namespace Prisoner
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Criminal i = new Criminal();
+           /* Criminal i = new Criminal();
             if (i.thread.Contains(mac))
-            {
+            {*/
                 SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
                 c.Open();
                 string query = "Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'";
@@ -63,11 +63,11 @@ namespace Prisoner
                     c.Close();
 
                 }
-            }
-            else
+            
+            /*else
             {
                 MessageBox.Show("My nigger you didn't pay for it");
-            }
+            }*/
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -82,6 +82,19 @@ namespace Prisoner
                     break;
                 }
             }
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Guard g = new Guard();
+             g.Show();
+           
+            this.Hide();
         }
     }
 }

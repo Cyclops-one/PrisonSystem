@@ -56,6 +56,7 @@ namespace Prisoner
             }
             con.Close();
             dataGridView1.DataSource = list;
+            reader.Close();
 
         }
     }
