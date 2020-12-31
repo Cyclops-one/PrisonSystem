@@ -16,5 +16,10 @@ namespace Prisoner
         {
             InitializeComponent();
         }
+
+        private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
