@@ -5,10 +5,12 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Prisoner
 {
@@ -63,13 +65,21 @@ namespace Prisoner
                 p.Counselor = reader["Counselor"].ToString();
                 list.Add(p);
             }
-            c.Close();
             dataGridView1.DataSource = list;
             reader.Close();
+            c.Close();
+            
+            
         }
 
         private void button4_Click(object sender, EventArgs e)//guard add
         {
+            string path = @"C: \Users\Satanic\Desktop\Empty\a.txt";
+            FileInfo info = new FileInfo(path);
+            DateTime lt = info.LastWriteTime;
+            Thread.Sleep(2000);
+            MessageBox.Show("Last Added----"+lt.ToString()+"");
+            Thread.Sleep(1000);
             AddGuard ag = new AddGuard();
             ag.Show();
             this.Hide();
@@ -202,6 +212,7 @@ namespace Prisoner
                     c.Close();
                     dataGridView1.DataSource = list;
                     reader.Close();
+                    textBox4.Text = null;
                 }
             }
 
@@ -225,6 +236,13 @@ namespace Prisoner
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
+            this.Hide();
         }
     }
 }

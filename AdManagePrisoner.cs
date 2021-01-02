@@ -154,5 +154,12 @@ namespace Prisoner
                 //textBox1.Text = null;
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AdminPanel ad = new AdminPanel();
+            ad.Show();
+            this.Hide();
+        }
     }
 }

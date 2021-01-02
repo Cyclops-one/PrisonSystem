@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Prisoner
 
         private void button1_Click(object sender, EventArgs e)//addprisoner
         {
+            
             this.Hide();
             Form1 f = new Form1();
             f.Show();
@@ -91,6 +93,21 @@ namespace Prisoner
         private void Guard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            this.Hide();
+            l.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            string path = @"C: \Users\Satanic\Desktop\Empty\b.txt";
+            FileInfo info = new FileInfo(path);
+            DateTime lt = info.LastWriteTime;
+            label5.Text = lt.ToString();
         }
     }
 }

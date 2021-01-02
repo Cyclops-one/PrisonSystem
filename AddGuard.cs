@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,19 @@ namespace Prisoner
             command.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Guard Added successfully!");
+
+            string path = @"C: \Users\Satanic\Desktop\Empty\a.txt";
+            FileInfo info = new FileInfo(path);
+            string text = "ser";
+            File.WriteAllText(path, text);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminPanel ad = new AdminPanel();
+            ad.Show();
+            this.Hide();
         }
     }
 }

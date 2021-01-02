@@ -93,10 +93,7 @@ namespace Prisoner
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Guard g = new Guard();
-             g.Show();
-           
-            this.Hide();
+            Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e)
