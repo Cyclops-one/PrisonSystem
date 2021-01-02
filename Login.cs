@@ -105,6 +105,13 @@ namespace Prisoner
             ap.Show();
             this.Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GuardSignUp gs = new GuardSignUp();
+            gs.Show();
+            this.Hide();
+        }
     }
 }
      

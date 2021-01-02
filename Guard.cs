@@ -14,10 +14,11 @@ namespace Prisoner
 {
     public partial class Guard : Form
     {
+        string ID;
         public Guard()
         {
             InitializeComponent();
-            
+            ID = Login.Councelor;
         }
 
         private void button1_Click(object sender, EventArgs e)//addprisoner
@@ -29,7 +30,12 @@ namespace Prisoner
 
         private void button2_Click(object sender, EventArgs e)//update
         {
-
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
+            c.Open();
+            string query = "Update dbo.Prisoners set " + comboBox1.Text + " ='" + textBox2.Text + "' where PrisonerID = '" + textBox3.Text + "'";
+            SqlCommand command = new SqlCommand(query, c);
+            command.ExecuteNonQuery();
+            c.Close();
         }
 
         private void Guard_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,6 +53,7 @@ namespace Prisoner
             else
             {
                 choice = "CounSelor";
+                textBox1.Text = ID;
                
             }
             SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
@@ -62,10 +69,11 @@ namespace Prisoner
             {
                 Criminal p = new Criminal();
                 p.Name = reader["Name"].ToString();
-               // p.PrisonerID = reader["PrisonerID"].ToString();
+                p.PrisonerID = (int)reader["PrisonerID"];
                 p.Gender = reader["Gender"].ToString();
                 p.DateofBirth = reader["DateofBirth"].ToString();
                 p.CrimeDescription = reader["CrimeDescription"].ToString();
+                p.Punishment = reader["Punishment"].ToString();
                 p.CellNo = reader["CellNo"].ToString();
                 p.BloodGroup = reader["BloodGroup"].ToString();
                 p.Address = reader["Address"].ToString();

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -12,51 +12,44 @@ using System.Windows.Forms;
 
 namespace Prisoner
 {
-    public partial class Form1 : Form
+    public partial class Supad : Form
     {
-        string Counselor;
-        public Form1()
+        public Supad()
         {
             InitializeComponent();
-            string Counselor=Login.Councelor;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Supad_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)//add
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
             connection.Open();
             string gen = null;
-            if (txtmale.Checked)
+            if (radioButton1.Checked)
             {
-                gen = txtmale.Text;
+                gen = radioButton1.Text;
             }
             else
             {
-                gen = txtfemale.Text;
+                gen = radioButton2.Text;
             }
             string sql = "INSERT INTO Prisoners(Name,PriosnerId,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address)" +
-                " VALUES('"+txtname.Text+"','"+txtprisonerid.Text+"','"+gen+"','"+dob.Text+"','"+txtcrimedescription.Text+"','"+txtpunishment.Text+"','"+txtcellno.Text+"','"+txtbloodgroup.Text+"','"+txtaddress.Text+"','"+Counselor+"')";
+                " VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + gen + "','" + dateTimePicker1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + comboBox1.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
             SqlCommand command = new SqlCommand(sql, connection);
             command.ExecuteNonQuery();
-           connection.Close();
+            connection.Close();
             MessageBox.Show("Prisoner Added successfully!");
-            
-            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//goback
         {
-            
+            AdManagePrisoner adm = new AdManagePrisoner();
+            this.Hide();
+            adm.Show();
         }
-
-        
     }
 }

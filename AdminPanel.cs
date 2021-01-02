@@ -35,9 +35,9 @@ namespace Prisoner
         
         private void button2_Click(object sender, EventArgs e)
         {
-            Guard guard = new Guard();
+            AdManagePrisoner adm = new AdManagePrisoner();
             this.Hide();
-            guard.Show();
+            adm.Show();
         }
       
 
@@ -53,7 +53,7 @@ namespace Prisoner
             {
                 Grd p = new Grd();
                 p.Name = reader["Name"].ToString();
-               // p.GuardID = reader["GuardID"].ToString();
+                p.GuardID = (int)reader["GuardID"];
                 p.Gender = reader["Gender"].ToString();
                 p.BloodGroup = reader["BloodGroup"].ToString();
                 p.InService = reader["InService"].ToString();
@@ -120,7 +120,7 @@ namespace Prisoner
                     {
                         Criminal p = new Criminal();
                         p.Name = reader["Name"].ToString();
-                        // p.PrisonerID = reader["PrisonerID"].ToString();
+                        p.PrisonerID = (int)reader["PrisonerID"];
                         p.Gender = reader["Gender"].ToString();
                         p.DateofBirth = reader["DateofBirth"].ToString();
                         p.CrimeDescription = reader["CrimeDescription"].ToString();
@@ -152,7 +152,7 @@ namespace Prisoner
                     {
                         Criminal p = new Criminal();
                         p.Name = reader["Name"].ToString();
-                        // p.PrisonerID = reader["PrisonerID"].ToString();
+                        p.PrisonerID = (int)reader["PrisonerID"];
                         p.Gender = reader["Gender"].ToString();
                         p.DateofBirth = reader["DateofBirth"].ToString();
                         p.CrimeDescription = reader["CrimeDescription"].ToString();
@@ -189,7 +189,7 @@ namespace Prisoner
                     {
                         Grd p = new Grd();
                         p.Name = reader["Name"].ToString();
-                        // p.GuardID = reader["GuardID"].ToString();
+                        p.GuardID = (int)reader["GuardID"];
                         p.Gender = reader["Gender"].ToString();
                         p.BloodGroup = reader["BloodGroup"].ToString();
                         p.InService = reader["InService"].ToString();
