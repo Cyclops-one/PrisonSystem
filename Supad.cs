@@ -37,7 +37,7 @@ namespace Prisoner
             {
                 gen = radioButton2.Text;
             }
-            string sql = "INSERT INTO Prisoners(Name,PriosnerId,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address)" +
+            string sql = "INSERT INTO Prisoners(Name,PrisonerID,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address,Counselor)" +
                 " VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + gen + "','" + dateTimePicker1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + comboBox1.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
             SqlCommand command = new SqlCommand(sql, connection);
             command.ExecuteNonQuery();

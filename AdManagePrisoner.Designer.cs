@@ -143,10 +143,10 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(531, 255);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(115, 17);
+            this.radioButton2.Size = new System.Drawing.Size(105, 17);
             this.radioButton2.TabIndex = 8;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "According to Block";
+            this.radioButton2.Text = "According to Cell";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // textBox4
@@ -199,7 +199,7 @@
             "Q",
             "R",
             "S",
-            "T",
+            "T11",
             "W",
             "X",
             "Y",

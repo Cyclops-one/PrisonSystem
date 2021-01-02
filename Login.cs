@@ -24,7 +24,7 @@ namespace Prisoner
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* Criminal i = new Criminal();
+          /*  Criminal i = new Criminal();
             if (i.thread.Contains(mac))
             {*/
                 SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
@@ -52,7 +52,7 @@ namespace Prisoner
                     }
                     else
                     {
-                    Councelor = textBox1.Text;
+                        Councelor = textBox1.Text;
                         Guard g = new Guard();
                         this.Hide();
                         g.Show();
@@ -65,12 +65,13 @@ namespace Prisoner
                     c.Close();
 
                 }
-            
-            /*else
-            {
-                MessageBox.Show("My nigger you didn't pay for it");
-            }*/
-        }
+
+
+                /*{
+                    MessageBox.Show("Database Mismatch Exception");
+                }*/
+            }
+        
 
         private void Login_Load(object sender, EventArgs e)
         {

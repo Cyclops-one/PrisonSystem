@@ -196,6 +196,7 @@
             this.Name = "GuardSignUp";
             this.Text = "GuardSignUp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GuardSignUp_FormClosing);
+            this.Load += new System.EventHandler(this.GuardSignUp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -84,5 +84,10 @@ namespace Prisoner
             f.Show();
             this.Hide();
         }
+
+        private void GuardSignUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

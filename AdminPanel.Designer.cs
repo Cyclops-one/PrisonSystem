@@ -311,7 +311,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
