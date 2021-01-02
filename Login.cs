@@ -15,6 +15,7 @@ namespace Prisoner
 {
     public partial class Login : Form
     {
+        public static string Councelor;
         public string mac;
         public Login()
         {
@@ -51,6 +52,7 @@ namespace Prisoner
                     }
                     else
                     {
+                    Councelor = textBox1.Text;
                         Guard g = new Guard();
                         this.Hide();
                         g.Show();
@@ -94,6 +96,13 @@ namespace Prisoner
             Guard g = new Guard();
              g.Show();
            
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AdminPanel ap = new AdminPanel();
+            ap.Show();
             this.Hide();
         }
     }

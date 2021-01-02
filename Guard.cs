@@ -17,6 +17,7 @@ namespace Prisoner
         public Guard()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)//addprisoner
@@ -46,6 +47,7 @@ namespace Prisoner
             else
             {
                 choice = "CounSelor";
+               
             }
             SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
             c.Open();
@@ -60,7 +62,7 @@ namespace Prisoner
             {
                 Criminal p = new Criminal();
                 p.Name = reader["Name"].ToString();
-                p.PrisonerID = reader["PrisonerID"].ToString();
+               // p.PrisonerID = reader["PrisonerID"].ToString();
                 p.Gender = reader["Gender"].ToString();
                 p.DateofBirth = reader["DateofBirth"].ToString();
                 p.CrimeDescription = reader["CrimeDescription"].ToString();
