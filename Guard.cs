@@ -109,5 +109,13 @@ namespace Prisoner
             DateTime lt = info.LastWriteTime;
             label5.Text = lt.ToString();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Menu m = new Menu();
+          
+            m.Show();
+            this.Hide();
+        }
     }
 }
