@@ -34,7 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,7 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,12 +116,12 @@
             this.radioButton2.Text = "AccordingToCounselor ";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(620, 164);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtbox.Location = new System.Drawing.Point(620, 164);
+            this.txtbox.Name = "txtbox";
+            this.txtbox.Size = new System.Drawing.Size(100, 20);
+            this.txtbox.TabIndex = 10;
             // 
             // comboBox1
             // 
@@ -216,24 +215,12 @@
             this.label5.Text = "Last Added";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(687, 28);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 23);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "FoodMenu";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // Guard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
@@ -243,7 +230,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbox);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.dataGridView1);
@@ -268,7 +255,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -278,6 +265,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
     }
 }

@@ -16,10 +16,14 @@ namespace Prisoner
     public partial class Guard : Form
     {
         string ID;
+        Access a;
+        public static String strr;
+        Criminal cri = new Criminal();
         public Guard()
         {
             InitializeComponent();
             ID = Login.Councelor;
+            this.a = new Access();
         }
 
         private void button1_Click(object sender, EventArgs e)//addprisoner
@@ -32,12 +36,8 @@ namespace Prisoner
 
         private void button2_Click(object sender, EventArgs e)//update
         {
-            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-            c.Open();
-            string query = "Update dbo.Prisoners set " + comboBox1.Text + " ='" + textBox2.Text + "' where PrisonerID = '" + textBox3.Text + "'";
-            SqlCommand command = new SqlCommand(query, c);
-            command.ExecuteNonQuery();
-            c.Close();
+            
+            a.Execute("Update dbo.Prisoners set " + comboBox1.Text + " ='" + textBox2.Text + "' where PrisonerID = '" + textBox3.Text + "'");
         }
 
         private void Guard_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,52 +47,32 @@ namespace Prisoner
 
         private void button3_Click(object sender, EventArgs e)//search
         {
-            string choice = null;
+            //string choice = null;
             if (radioButton1.Checked)
             {
-                choice = "PrisonerID";
+                // choice = "PrisonerID";
+                strr = txtbox.Text;
+
+                dataGridView1.DataSource = cri.Listbyidg();
+                a.Cclose();
+
             }
             else
             {
-                choice = "CounSelor";
-                textBox1.Text = ID;
-               
+                txtbox.Text = null;
+                dataGridView1.DataSource = cri.Listbycounselor();
+                a.Cclose();
             }
-            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-            c.Open();
-            //Form1 f = new Form1();
+           
 
-            string query = "Select * from Prisoners where " + choice + "='" + textBox1.Text + "'";
-            SqlCommand command = new SqlCommand(query, c);
-            SqlDataReader reader = command.ExecuteReader();
-            List<Criminal> list = new List<Criminal>();
-            
-            while (reader.Read())
-            {
-                Criminal p = new Criminal();
-                p.Name = reader["Name"].ToString();
-                p.PrisonerID = (int)reader["PrisonerID"];
-                p.Gender = reader["Gender"].ToString();
-                p.DateofBirth = reader["DateofBirth"].ToString();
-                p.CrimeDescription = reader["CrimeDescription"].ToString();
-                p.Punishment = reader["Punishment"].ToString();
-                p.CellNo = reader["CellNo"].ToString();
-                p.BloodGroup = reader["BloodGroup"].ToString();
-                p.Address = reader["Address"].ToString();
-                p.Counselor = reader["Counselor"].ToString();
-
-
-                list.Add(p);
-            }
-            c.Close();
-            dataGridView1.DataSource = list;
-            reader.Close();
-            textBox1.Text = null;
         }
 
         private void Guard_Load(object sender, EventArgs e)
         {
+            Criminal cr = new Criminal();
 
+            dataGridView1.DataSource = cr.Alllist();
+            a.Cclose();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -110,12 +90,6 @@ namespace Prisoner
             label5.Text = lt.ToString();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Menu m = new Menu();
-          
-            m.Show();
-            this.Hide();
-        }
+       
     }
 }

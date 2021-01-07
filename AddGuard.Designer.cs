@@ -50,7 +50,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -85,11 +84,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 58);
+            this.label1.Location = new System.Drawing.Point(174, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -114,9 +114,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(174, 250);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "joined";
+            this.label4.Text = "InSevice";
             // 
             // radioButton1
             // 
@@ -188,6 +188,7 @@
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "EndService";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -255,15 +256,6 @@
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(514, 265);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(236, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "If the guard is still in service you might tik the box";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -278,10 +270,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Orange;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -307,6 +298,7 @@
             this.Name = "AddGuard";
             this.Text = "AddGuard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGuard_FormClosing);
+            this.Load += new System.EventHandler(this.AddGuard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,7 +328,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
     }
 }

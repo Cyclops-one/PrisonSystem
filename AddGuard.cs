@@ -72,5 +72,20 @@ namespace Prisoner
         {
             MessageBox.Show("Underscore ControlBlock followed by Firstname");
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("If the guard is still in service you might tik the box");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddGuard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

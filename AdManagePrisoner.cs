@@ -14,9 +14,17 @@ namespace Prisoner
 {
     public partial class AdManagePrisoner : Form
     {
+
+        public static string Cell;
+        public static string Id;
+        Access a;
+
         public AdManagePrisoner()
         {
             InitializeComponent();
+
+            this.a = new Access();
+
         }
 
         private void AdManagePrisoner_FormClosing(object sender, FormClosingEventArgs e)
@@ -33,125 +41,62 @@ namespace Prisoner
 
         private void button2_Click(object sender, EventArgs e)//DELETE
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-            connection.Open();
-            string q = "Delete  from Prisoners where PrisonerID='" + textBox4.Text + "' ";
-            SqlCommand command = new SqlCommand(q, connection);
-            command.ExecuteNonQuery();
-            connection.Close();
+
+
+            a.Execute("Delete  from Prisoners where PrisonerID='" + textBox4.Text + "' ");
+
 
         }
 
         private void button3_Click(object sender, EventArgs e)//update
         {
-            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-            c.Open();
-            string query = "Update dbo.Prisoners set " + comboBox1.Text + " ='" + textBox1.Text + "' where PrisonerID = '" + textBox2.Text + "'";
-            SqlCommand command = new SqlCommand(query, c);
-            command.ExecuteNonQuery();
-            c.Close();
+
+
+            a.Execute("Update dbo.Prisoners set " + comboBox1.Text + " ='" + textBox1.Text + "' where PrisonerID = '" + textBox2.Text + "'");
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
             {
-                SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-                c.Open();
-                //Form1 f = new Form1();
-
-                string query = "Select * from Prisoners where PrisonerID ='" + textBox3.Text + "'";
-                SqlCommand command = new SqlCommand(query, c);
-                SqlDataReader reader = command.ExecuteReader();
-                List<Criminal> list = new List<Criminal>();
-
-                while (reader.Read())
-                {
-                    Criminal p = new Criminal();
-                    p.Name = reader["Name"].ToString();
-                    p.PrisonerID = (int)reader["PrisonerID"];
-                    p.Gender = reader["Gender"].ToString();
-                    p.DateofBirth = reader["DateofBirth"].ToString();
-                    p.CrimeDescription = reader["CrimeDescription"].ToString();
-                    p.Punishment = reader["Punishment"].ToString();
-                    p.CellNo = reader["CellNo"].ToString();
-                    p.BloodGroup = reader["BloodGroup"].ToString();
-                    p.Address = reader["Address"].ToString();
-                    p.Counselor = reader["Counselor"].ToString();
 
 
-                    list.Add(p);
-                }
-                c.Close();
-                dataGridView1.DataSource = list;
-                reader.Close();
-                textBox3.Text = null;
+                // dataGridView1.DataSource  =a.Alllist("Select * from Prisoners where PrisonerID ='" + textBox3.Text + "'");
+                //a.Alllist("Select * from Prisoners where PrisonerID ='" + textBox3.Text + "'");
+                //string sql = "Select * from Prisoners where PrisonerID ='" + textBox3.Text + "'";
+                Criminal cr = new Criminal();
+                Id = txtbox.Text;
+                dataGridView1.DataSource = cr.Listbyid();
+                a.Cclose();
+               
+
             }
+
             else if (radioButton2.Checked)
             {
-                SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-                c.Open();
-                //Form1 f = new Form1();
-
-                string query = "Select * from Prisoners where CellNo='" + comboBox2.Text + "'";
-                SqlCommand command = new SqlCommand(query, c);
-                SqlDataReader reader = command.ExecuteReader();
-                List<Criminal> list = new List<Criminal>();
-
-                while (reader.Read())
-                {
-                    Criminal p = new Criminal();
-                    p.Name = reader["Name"].ToString();
-                    p.PrisonerID = (int)reader["PrisonerID"];
-                    p.Gender = reader["Gender"].ToString();
-                    p.DateofBirth = reader["DateofBirth"].ToString();
-                    p.CrimeDescription = reader["CrimeDescription"].ToString();
-                    p.Punishment = reader["Punishment"].ToString();
-                    p.CellNo = reader["CellNo"].ToString();
-                    p.BloodGroup = reader["BloodGroup"].ToString();
-                    p.Address = reader["Address"].ToString();
-                    p.Counselor = reader["Counselor"].ToString();
 
 
-                    list.Add(p);
-                }
-                c.Close();
-                dataGridView1.DataSource = list;
-                reader.Close();
-                //textBox1.Text = null;
+                // dataGridView1.DataSource  =a.Alllist("Select * from Prisoners where CellNo='" + comboBox2.Text + "'");
+                // a.Alllist("Select * from Prisoners where CellNo='" + comboBox2.Text + "'");
+                txtbox.Text = null;
+                Cell = comboBox2.Text;
+                Criminal cr = new Criminal();
+
+                dataGridView1.DataSource = cr.Listbycell();
+                a.Cclose();
+                comboBox2.Text = null;
             }
             else
             {
-                SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-                c.Open();
-                //Form1 f = new Form1();
+                // a.Connection();
+                //dataGridView1.DataSource  =a.Alllist("Select * from Prisoners");
+                Criminal cr = new Criminal();
+                dataGridView1.DataSource = cr.Alllist();
 
-                string query = "Select * from Prisoners ";
-                SqlCommand command = new SqlCommand(query, c);
-                SqlDataReader reader = command.ExecuteReader();
-                List<Criminal> list = new List<Criminal>();
-
-                while (reader.Read())
-                {
-                    Criminal p = new Criminal();
-                    p.Name = reader["Name"].ToString();
-                    p.PrisonerID = (int)reader["PrisonerID"];
-                    p.Gender = reader["Gender"].ToString();
-                    p.DateofBirth = reader["DateofBirth"].ToString();
-                    p.CrimeDescription = reader["CrimeDescription"].ToString();
-                    p.Punishment = reader["Punishment"].ToString();
-                    p.CellNo = reader["CellNo"].ToString();
-                    p.BloodGroup = reader["BloodGroup"].ToString();
-                    p.Address = reader["Address"].ToString();
-                    p.Counselor = reader["Counselor"].ToString();
-
-
-                    list.Add(p);
-                }
-                c.Close();
-                dataGridView1.DataSource = list;
-                reader.Close();
-                //textBox1.Text = null;
+                a.Cclose();
+                txtbox.Text = null;
+                comboBox2.Text = null;
             }
         }
 
@@ -160,6 +105,16 @@ namespace Prisoner
             AdminPanel ad = new AdminPanel();
             ad.Show();
             this.Hide();
+        }
+
+        private void AdManagePrisoner_Load(object sender, EventArgs e)
+        {
+            //a.Connection();
+            Criminal cr = new Criminal();
+           
+            dataGridView1.DataSource = cr.Alllist();
+            a.Cclose();
+
         }
     }
 }

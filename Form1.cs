@@ -15,7 +15,7 @@ namespace Prisoner
 {
     public partial class Form1 : Form
     {
-        string Counselor;
+       public static string Counselor;
         public Form1()
         {
             InitializeComponent();
@@ -32,8 +32,8 @@ namespace Prisoner
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-            connection.Open();
+           
+            Access a = new Access();
             string gen = null;
             if (txtmale.Checked)
             {
@@ -43,11 +43,8 @@ namespace Prisoner
             {
                 gen = txtfemale.Text;
             }
-            string sql = "INSERT INTO Prisoners(Name,PrisonerID,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address,Counselor)" +
-                " VALUES('" + txtname.Text + "','" + txtprisonerid.Text + "','" + gen + "','" + dob.Text + "','" + txtcrimedescription.Text + "','" + txtpunishment.Text + "','" + txtcellno.Text + "','" + txtbloodgroup.Text + "','" + txtaddress.Text + "','" + Counselor + "')";
-            SqlCommand command = new SqlCommand(sql, connection);
-            command.ExecuteNonQuery();
-            connection.Close();
+            a.Execute("INSERT INTO Prisoners(Name,PrisonerID,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address,Counselor)" +
+                " VALUES('" + txtname.Text + "','" + txtprisonerid.Text + "','" + gen + "','" + dob.Text + "','" + txtcrimedescription.Text + "','" + txtpunishment.Text + "','" + txtcellno.Text + "','" + txtbloodgroup.Text + "','" + txtaddress.Text + "','" + Counselor + "')");
             MessageBox.Show("Prisoner Added successfully!");
 
             string path = @"C: \Users\Satanic\Desktop\Empty\b.txt";

@@ -16,12 +16,14 @@ namespace Prisoner
 {
     public partial class AdminPanel : Form
     {
-        
+
+        Grd g = new Grd();
+        Access a;
         public AdminPanel()
         {
             InitializeComponent();
 
-          
+            this.a = new Access();
 
         }
 
@@ -32,7 +34,9 @@ namespace Prisoner
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-           
+            dataGridView1.DataSource = g.Grdlist();
+            a.Cclose();
+
         }
         
         private void button2_Click(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace Prisoner
 
         private void button1_Click(object sender, EventArgs e)//showall
         {
-            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
+          /*  SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
             c.Open();
             string query = "Select * from Guards"; 
             SqlCommand command = new SqlCommand(query, c);
@@ -67,7 +71,8 @@ namespace Prisoner
             }
             dataGridView1.DataSource = list;
             reader.Close();
-            c.Close();
+            c.Close();*/
+
             
             
         }
@@ -189,30 +194,7 @@ namespace Prisoner
                 }
                 else
                 {
-                    SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-                    c.Open();
-                    string query = "Select * from Guards where GuardID='"+textBox4.Text+"'";
-                    SqlCommand command = new SqlCommand(query, c);
-                    SqlDataReader reader = command.ExecuteReader();
-                    List<Grd> list = new List<Grd>();
-                    while (reader.Read())
-                    {
-                        Grd p = new Grd();
-                        p.Name = reader["Name"].ToString();
-                        p.GuardID = (int)reader["GuardID"];
-                        p.Gender = reader["Gender"].ToString();
-                        p.BloodGroup = reader["BloodGroup"].ToString();
-                        p.InService = reader["InService"].ToString();
-                        p.EndService = reader["EndService"].ToString();
-                        p.Address = reader["Address"].ToString();
-                        p.ControlBlock = reader["ControlBlock"].ToString();
-                        p.Counselor = reader["Counselor"].ToString();
-                        list.Add(p);
-                    }
-                    c.Close();
-                    dataGridView1.DataSource = list;
-                    reader.Close();
-                    textBox4.Text = null;
+                   
                 }
             }
 

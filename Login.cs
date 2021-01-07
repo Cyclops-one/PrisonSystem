@@ -17,6 +17,7 @@ namespace Prisoner
     {
         public static string Councelor;
         public string mac;
+        Access a = new Access();
         public Login()
         {
             InitializeComponent();
@@ -24,15 +25,17 @@ namespace Prisoner
 
         private void button1_Click(object sender, EventArgs e)
         {
-          /*  Criminal i = new Criminal();
-            if (i.thread.Contains(mac))
-            {*/
-                SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-                c.Open();
-                string query = "Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'";
-                SqlCommand command = new SqlCommand(query, c);
-                SqlDataReader reader = command.ExecuteReader();
-
+            /*  Criminal i = new Criminal();
+              if (i.thread.Contains(mac))
+              {*/
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
+            c.Open();
+            string query = "Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'";
+            SqlCommand command = new SqlCommand(query, c);
+            SqlDataReader reader = command.ExecuteReader();
+           /* a.Connection();
+            a.Execute("Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'");*/
+            
                 if (!reader.HasRows)
                 {
 
@@ -109,6 +112,16 @@ namespace Prisoner
             GuardSignUp gs = new GuardSignUp();
             gs.Show();
             this.Hide();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            AdManagePrisoner adm = new AdManagePrisoner();
+            
+            adm.Show();
+            this.Hide();
+
+
         }
     }
 }
