@@ -14,6 +14,7 @@ namespace Prisoner
         string I = AdManagePrisoner.Id;
         //String Iden = Guard.strr;
         string Cou = Login.Councelor;
+        string Cid = AdminPanel.Pid;
         public Criminal()
         {
             this.ac = new Access();
@@ -46,7 +47,12 @@ namespace Prisoner
 
               return Criminals("Select * from Prisoners where PrisonerID ='" + I + "'");
           }
-          public List<Criminal> Listbycell()
+        public List<Criminal> Listbyida()
+        {
+
+            return Criminals("Select * from Prisoners where PrisonerID ='" + Cid + "'");
+        }
+        public List<Criminal> Listbycell()
           {
 
               return Criminals("Select * from Prisoners where CellNo='" + S + "'");
