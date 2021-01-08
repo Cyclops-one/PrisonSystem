@@ -51,7 +51,13 @@ namespace Prisoner
                     MessageBox.Show("Login successfull");
                     if (textBox1.Text == "Supervisor")
                     {
-                        this.Hide();
+                    string path = @"C: \Users\Satanic\Desktop\Empty\S.txt";
+                    FileInfo info = new FileInfo(path);
+                    DateTime lt = info.LastWriteTime;
+                    MessageBox.Show("Last Signed in"+lt.ToString());
+
+                    this.Hide();
+
                         AdminPanel ad = new AdminPanel();
                         ad.Show();
                     }

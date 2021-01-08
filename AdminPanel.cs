@@ -24,6 +24,23 @@ namespace Prisoner
             InitializeComponent();
 
             this.a = new Access();
+            string fileName = @"C: \Users\Satanic\Desktop\Empty\S.text";
+            if (File.Exists(fileName))
+            {
+                //File.Delete(fileName);
+                string path = @"C: \Users\Satanic\Desktop\Empty\S.txt";
+                FileInfo info = new FileInfo(path);
+                string text = "ser";
+                File.WriteAllText(path, text);
+            }
+            else
+            {
+                File.Create(fileName);
+                string pat = @"C: \Users\Satanic\Desktop\Empty\S.txt";
+                FileInfo info = new FileInfo(pat);
+                string text = "ser";
+                File.WriteAllText(pat, text);
+            }
 
         }
 
