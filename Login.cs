@@ -5,9 +5,11 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,7 +57,14 @@ namespace Prisoner
                     }
                     else
                     {
-                        Councelor = textBox1.Text;
+                    string path = @"C: \Users\Satanic\Desktop\Empty\" + textBox1.Text + ".txt";
+                    FileInfo info = new FileInfo(path);
+                    DateTime lt = info.LastWriteTime;
+                    //DateTime lt=info.Lastc
+                    Thread.Sleep(2000);
+                    MessageBox.Show("Last logged in" + lt.ToString());
+                    
+                    Councelor = textBox1.Text;
                         Guard g = new Guard();
                         this.Hide();
                         g.Show();

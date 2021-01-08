@@ -24,6 +24,23 @@ namespace Prisoner
             InitializeComponent();
             ID = Login.Councelor;
             this.a = new Access();
+            string fileName = @"C: \Users\Satanic\Desktop\Empty\" + ID + ".text";
+            if (File.Exists(fileName))
+            {
+                //File.Delete(fileName);
+                string path = @"C: \Users\Satanic\Desktop\Empty\" + ID + ".txt";
+                FileInfo info = new FileInfo(path);
+                string text = "ser";
+                File.WriteAllText(path, text);
+            }
+            else
+            {
+                File.Create(fileName);
+                string pat = @"C: \Users\Satanic\Desktop\Empty\" + ID + ".txt";
+                FileInfo info = new FileInfo(pat);
+                string text = "ser";
+                File.WriteAllText(pat, text);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)//addprisoner
@@ -70,10 +87,15 @@ namespace Prisoner
 
         private void Guard_Load(object sender, EventArgs e)
         {
-            Criminal cr = new Criminal();
+            /* Criminal cr = new Criminal();
 
-            dataGridView1.DataSource = cr.Alllist();
-            a.Cclose();
+             dataGridView1.DataSource = cr.Alllist();
+             a.Cclose();*/
+            
+
+
+           
+
         }
 
         private void button4_Click(object sender, EventArgs e)
