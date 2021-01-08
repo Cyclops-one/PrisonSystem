@@ -50,6 +50,7 @@ namespace Prisoner
         public List<Grd> Grdlist()
         {
             return Allgrd("Select * from Guards");
+            
         }
     }
 }

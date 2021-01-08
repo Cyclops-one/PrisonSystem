@@ -75,7 +75,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button2.Location = new System.Drawing.Point(26, 40);
+            this.button2.Location = new System.Drawing.Point(6, 89);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 24);
             this.button2.TabIndex = 1;
@@ -140,7 +140,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(221, 26);
+            this.button5.Location = new System.Drawing.Point(194, 26);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 7;
@@ -162,7 +162,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 55);
+            this.textBox1.Location = new System.Drawing.Point(194, 59);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(75, 20);
             this.textBox1.TabIndex = 9;
@@ -329,6 +329,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(451, 40);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(373, 128);
@@ -347,7 +348,6 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";

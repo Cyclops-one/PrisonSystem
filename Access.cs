@@ -31,11 +31,12 @@ namespace Prisoner
         }
         public void Execute(string q)
         {
+            this.con.Open();
             this.com = new SqlCommand(q, this.con);
             this.com.ExecuteNonQuery();
             //this.con.Close();
         }
-      
+        
         
        
 

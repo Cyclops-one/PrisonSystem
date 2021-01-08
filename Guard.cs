@@ -38,6 +38,7 @@ namespace Prisoner
         {
             
             a.Execute("Update dbo.Prisoners set " + comboBox1.Text + " ='" + textBox2.Text + "' where PrisonerID = '" + textBox3.Text + "'");
+            a.Cclose();
         }
 
         private void Guard_FormClosing(object sender, FormClosingEventArgs e)
