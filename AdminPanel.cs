@@ -109,7 +109,7 @@ namespace Prisoner
         private void button3_Click(object sender, EventArgs e)//search
         {
             
-            //string choice = null;
+           
             if (radioButton1.Checked)
 
             { 
@@ -126,7 +126,7 @@ namespace Prisoner
             
               
                 {
-                    // button1_Click(sender,e);
+                    
                     Gid = textBox4.Text;
                    dataGridView2.DataSource= g.Grdlistbyid();
                     a.Cclose();

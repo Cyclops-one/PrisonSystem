@@ -10,7 +10,7 @@ namespace Prisoner
     class Grd
     {
         Access sa;
-        string Gr = AdminPanel.Gid;
+        
         public Grd()
         {
             this.sa = new Access();
@@ -74,7 +74,7 @@ namespace Prisoner
         }
         public List<Grd> Grdlistbyid()
         {
-            return Allgrd("Select * from Guards where GuardID='"+Gr+"'");
+            return Allgrd("Select * from Guards where GuardID='"+ AdminPanel.Gid + "'");
             
         }
     }

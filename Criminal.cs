@@ -10,11 +10,11 @@ namespace Prisoner
     class Criminal
     {
         Access ac;
-        string S = AdManagePrisoner.Cell;
-        string I = AdManagePrisoner.Id;
+        
+       
         //String Iden = Guard.strr;
-        string Cou = Login.Councelor;
-        string Cid = AdminPanel.Pid;
+        
+       
         public Criminal()
         {
             this.ac = new Access();
@@ -45,23 +45,23 @@ namespace Prisoner
         public List<Criminal> Listbyid()
           {
 
-              return Criminals("Select * from Prisoners where PrisonerID ='" + I + "'");
+              return Criminals("Select * from Prisoners where PrisonerID ='" + AdManagePrisoner.Id + "'");
           }
         public List<Criminal> Listbyida()
         {
 
-            return Criminals("Select * from Prisoners where PrisonerID ='" + Cid + "'");
+            return Criminals("Select * from Prisoners where PrisonerID ='" + AdminPanel.Pid + "'");
             
         }
         public List<Criminal> Listbycell()
           {
 
-              return Criminals("Select * from Prisoners where CellNo='" + S + "'");
+              return Criminals("Select * from Prisoners where CellNo='" + AdManagePrisoner.Cell + "'");
           }
         public List<Criminal> Listbycounselor()
         {
 
-            return Criminals("Select * from Prisoners where Counselor='" + Cou + "'");
+            return Criminals("Select * from Prisoners where Counselor='" + Login.Councelor + "'");
         }
         public List<Criminal> Criminals(string sql)
         {

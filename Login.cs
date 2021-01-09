@@ -36,7 +36,7 @@ namespace Prisoner
              SqlCommand command = new SqlCommand(query, c);
              SqlDataReader reader = command.ExecuteReader();*/
             SqlDataReader reader = this.a.Receive("Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'");
-            a.Cclose();
+            
             
                 if (!reader.HasRows)
                 {
@@ -60,6 +60,7 @@ namespace Prisoner
 
                         AdminPanel ad = new AdminPanel();
                         ad.Show();
+                    a.Cclose();
                     }
                     else
                     {
@@ -69,7 +70,7 @@ namespace Prisoner
                     
                     Thread.Sleep(2000);
                     MessageBox.Show("Last logged in" + lt.ToString());
-                    
+                    a.Cclose();
                     Councelor = textBox1.Text;
                         Guard g = new Guard();
                         this.Hide();
