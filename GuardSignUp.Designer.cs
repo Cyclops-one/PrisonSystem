@@ -118,7 +118,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(251, 164);
+            this.textBox3.Location = new System.Drawing.Point(230, 151);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(106, 20);
             this.textBox3.TabIndex = 7;
@@ -128,7 +128,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(162, 165);
+            this.label4.Location = new System.Drawing.Point(138, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 8;
@@ -160,7 +160,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(385, 164);
+            this.button3.Location = new System.Drawing.Point(359, 148);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 23);
             this.button3.TabIndex = 11;
@@ -172,7 +172,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(382, 190);
+            this.label7.Location = new System.Drawing.Point(356, 184);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(174, 13);
             this.label7.TabIndex = 12;

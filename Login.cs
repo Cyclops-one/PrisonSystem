@@ -30,13 +30,13 @@ namespace Prisoner
             /*  Criminal i = new Criminal();
               if (i.thread.Contains(mac))
               {*/
-            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
-            c.Open();
-            string query = "Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'";
-            SqlCommand command = new SqlCommand(query, c);
-            SqlDataReader reader = command.ExecuteReader();
-           /* a.Connection();
-            a.Execute("Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'");*/
+            /* SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["prisoner"].ConnectionString);
+             c.Open();
+             string query = "Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'";
+             SqlCommand command = new SqlCommand(query, c);
+             SqlDataReader reader = command.ExecuteReader();*/
+            SqlDataReader reader = this.a.Receive("Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'");
+            a.Cclose();
             
                 if (!reader.HasRows)
                 {
@@ -66,7 +66,7 @@ namespace Prisoner
                     string path = @"C: \Users\Satanic\Desktop\Empty\" + textBox1.Text + ".txt";
                     FileInfo info = new FileInfo(path);
                     DateTime lt = info.LastWriteTime;
-                    //DateTime lt=info.Lastc
+                    
                     Thread.Sleep(2000);
                     MessageBox.Show("Last logged in" + lt.ToString());
                     
@@ -80,7 +80,7 @@ namespace Prisoner
 
 
                     reader.Close();
-                    c.Close();
+                    a.Cclose();
 
                 }
 
