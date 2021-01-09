@@ -15,11 +15,11 @@ namespace Prisoner
 {
     public partial class Form1 : Form
     {
-       public static string Counselor;
+     
         public Form1()
         {
             InitializeComponent();
-            string Counselor = Login.Councelor;
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -44,9 +44,9 @@ namespace Prisoner
                 gen = txtfemale.Text;
             }
             a.Execute("INSERT INTO Prisoners(Name,PrisonerID,Gender,DateofBirth,CrimeDescription,Punishment,CellNo,BloodGroup,Address,Counselor)" +
-                " VALUES('" + txtname.Text + "','" + txtprisonerid.Text + "','" + gen + "','" + dob.Text + "','" + txtcrimedescription.Text + "','" + txtpunishment.Text + "','" + txtcellno.Text + "','" + txtbloodgroup.Text + "','" + txtaddress.Text + "','" + Counselor + "')");
+                " VALUES('" + txtname.Text + "','" + txtprisonerid.Text + "','" + gen + "','" + dob.Text + "','" + txtcrimedescription.Text + "','" + txtpunishment.Text + "','" + txtcellno.Text + "','" + txtbloodgroup.Text + "','" + txtaddress.Text + "','" + Login.Councelor + "')");
             MessageBox.Show("Prisoner Added successfully!");
-
+            a.Cclose();
             string path = @"C: \Users\Satanic\Desktop\Empty\b.txt";
             FileInfo info = new FileInfo(path);
             string text = "ser";

@@ -10,17 +10,13 @@ namespace Prisoner
     class Criminal
     {
         Access ac;
-        
-       
-        //String Iden = Guard.strr;
-        
-       
+      
         public Criminal()
         {
             this.ac = new Access();
         }
         
-        //String s = "textBox3.Text";
+        
         public string Name { get; set; }
         public int PrisonerID { get; set; }
         public string Gender { get; set; }

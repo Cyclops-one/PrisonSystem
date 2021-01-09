@@ -50,8 +50,10 @@
             this.txtmale = new System.Windows.Forms.RadioButton();
             this.txtfemale = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(220, 60);
+            this.txtname.Location = new System.Drawing.Point(111, 32);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(100, 20);
             this.txtname.TabIndex = 1;
@@ -74,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 67);
+            this.label2.Location = new System.Drawing.Point(20, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 2;
@@ -84,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(139, 157);
+            this.label3.Location = new System.Drawing.Point(6, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
@@ -93,7 +95,7 @@
             // 
             // txtcrimedescription
             // 
-            this.txtcrimedescription.Location = new System.Drawing.Point(220, 176);
+            this.txtcrimedescription.Location = new System.Drawing.Point(117, 60);
             this.txtcrimedescription.Name = "txtcrimedescription";
             this.txtcrimedescription.Size = new System.Drawing.Size(100, 20);
             this.txtcrimedescription.TabIndex = 1;
@@ -101,7 +103,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(125, 183);
+            this.label4.Location = new System.Drawing.Point(6, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 2;
@@ -110,7 +112,7 @@
             // 
             // txtpunishment
             // 
-            this.txtpunishment.Location = new System.Drawing.Point(220, 202);
+            this.txtpunishment.Location = new System.Drawing.Point(111, 131);
             this.txtpunishment.Name = "txtpunishment";
             this.txtpunishment.Size = new System.Drawing.Size(100, 20);
             this.txtpunishment.TabIndex = 1;
@@ -118,7 +120,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(152, 209);
+            this.label5.Location = new System.Drawing.Point(20, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 2;
@@ -127,7 +129,7 @@
             // 
             // txtcellno
             // 
-            this.txtcellno.Location = new System.Drawing.Point(220, 228);
+            this.txtcellno.Location = new System.Drawing.Point(111, 175);
             this.txtcellno.Name = "txtcellno";
             this.txtcellno.Size = new System.Drawing.Size(100, 20);
             this.txtcellno.TabIndex = 1;
@@ -135,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(151, 235);
+            this.label6.Location = new System.Drawing.Point(20, 182);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 2;
@@ -145,7 +147,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(151, 262);
+            this.label7.Location = new System.Drawing.Point(6, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 2;
@@ -164,14 +166,14 @@
             "B-",
             "O+",
             "O-"});
-            this.txtbloodgroup.Location = new System.Drawing.Point(220, 254);
+            this.txtbloodgroup.Location = new System.Drawing.Point(117, 97);
             this.txtbloodgroup.Name = "txtbloodgroup";
-            this.txtbloodgroup.Size = new System.Drawing.Size(121, 21);
+            this.txtbloodgroup.Size = new System.Drawing.Size(100, 21);
             this.txtbloodgroup.TabIndex = 3;
             // 
             // txtaddress
             // 
-            this.txtaddress.Location = new System.Drawing.Point(220, 291);
+            this.txtaddress.Location = new System.Drawing.Point(117, 142);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(100, 20);
             this.txtaddress.TabIndex = 1;
@@ -179,7 +181,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(157, 294);
+            this.label8.Location = new System.Drawing.Point(9, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 13);
             this.label8.TabIndex = 2;
@@ -189,7 +191,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(659, 395);
+            this.button1.Location = new System.Drawing.Point(574, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -200,7 +202,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(79, 395);
+            this.button2.Location = new System.Drawing.Point(53, 395);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -210,7 +212,7 @@
             // 
             // txtprisonerid
             // 
-            this.txtprisonerid.Location = new System.Drawing.Point(220, 86);
+            this.txtprisonerid.Location = new System.Drawing.Point(111, 68);
             this.txtprisonerid.Name = "txtprisonerid";
             this.txtprisonerid.Size = new System.Drawing.Size(100, 20);
             this.txtprisonerid.TabIndex = 1;
@@ -218,7 +220,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(149, 93);
+            this.label9.Location = new System.Drawing.Point(20, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 2;
@@ -227,15 +229,15 @@
             // 
             // dob
             // 
-            this.dob.Location = new System.Drawing.Point(220, 150);
+            this.dob.Location = new System.Drawing.Point(80, 19);
             this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(200, 20);
+            this.dob.Size = new System.Drawing.Size(198, 20);
             this.dob.TabIndex = 6;
             // 
             // txtmale
             // 
             this.txtmale.AutoSize = true;
-            this.txtmale.Location = new System.Drawing.Point(220, 112);
+            this.txtmale.Location = new System.Drawing.Point(111, 97);
             this.txtmale.Name = "txtmale";
             this.txtmale.Size = new System.Drawing.Size(48, 17);
             this.txtmale.TabIndex = 7;
@@ -246,7 +248,7 @@
             // txtfemale
             // 
             this.txtfemale.AutoSize = true;
-            this.txtfemale.Location = new System.Drawing.Point(293, 112);
+            this.txtfemale.Location = new System.Drawing.Point(182, 97);
             this.txtfemale.Name = "txtfemale";
             this.txtfemale.Size = new System.Drawing.Size(59, 17);
             this.txtfemale.TabIndex = 8;
@@ -257,30 +259,48 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(163, 116);
+            this.label10.Location = new System.Drawing.Point(20, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 9;
             this.label10.Text = "Gender";
             // 
-            // button3
+            // groupBox1
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(220, 329);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.groupBox1.Controls.Add(this.txtname);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtfemale);
+            this.groupBox1.Controls.Add(this.txtmale);
+            this.groupBox1.Controls.Add(this.txtpunishment);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtcellno);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtprisonerid);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(53, 65);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(270, 215);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mandatory";
             // 
-            // label11
+            // groupBox2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(152, 334);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Counselor";
+            this.groupBox2.Controls.Add(this.dob);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtcrimedescription);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtbloodgroup);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtaddress);
+            this.groupBox2.Location = new System.Drawing.Point(365, 65);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(284, 215);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Additionalinfo";
             // 
             // Form1
             // 
@@ -288,34 +308,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtfemale);
-            this.Controls.Add(this.txtmale);
-            this.Controls.Add(this.dob);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtbloodgroup);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtaddress);
-            this.Controls.Add(this.txtcellno);
-            this.Controls.Add(this.txtpunishment);
-            this.Controls.Add(this.txtcrimedescription);
-            this.Controls.Add(this.txtprisonerid);
-            this.Controls.Add(this.txtname);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,8 +350,8 @@
         private System.Windows.Forms.RadioButton txtmale;
         private System.Windows.Forms.RadioButton txtfemale;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

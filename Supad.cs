@@ -51,5 +51,10 @@ namespace Prisoner
             this.Hide();
             adm.Show();
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+            progressBar1.
+        }
     }
 }
