@@ -37,22 +37,13 @@ namespace Prisoner
 
 
        
-        public List<Criminal> Listbyidg()
-        {
-
-            return Criminals("Select * from Prisoners where PrisonerID ='" + Guard.strr + "'");
-        }
-        public List<Criminal> Listbyid()
+        
+        public List<Criminal> Listbyid(string Eid)
           {
 
-              return Criminals("Select * from Prisoners where PrisonerID ='" + AdManagePrisoner.Id + "'");
+              return Criminals("Select * from Prisoners where PrisonerID ='" + Eid + "'");
           }
-        public List<Criminal> Listbyida()
-        {
-
-            return Criminals("Select * from Prisoners where PrisonerID ='" + AdminPanel.Pid + "'");
-            
-        }
+       
         public List<Criminal> Listbycell()
           {
 

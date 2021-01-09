@@ -71,8 +71,9 @@ namespace Prisoner
                 // choice = "PrisonerID";
                 strr = txtbox.Text;
 
-                dataGridView1.DataSource = cri.Listbyidg();
+                dataGridView1.DataSource = cri.Listbyid(strr);
                 a.Cclose();
+                txtbox.Text = null;
 
             }
             else

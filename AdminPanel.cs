@@ -114,7 +114,7 @@ namespace Prisoner
 
             { 
                     Pid = textBox4.Text;
-                    dataGridView2.DataSource = c.Listbyida();
+                    dataGridView2.DataSource = c.Listbyid(Pid);
                     a.Cclose();
                 textBox4.Text = null;
                 radioButton1.Checked = false;
@@ -128,7 +128,7 @@ namespace Prisoner
                 {
                     
                     Gid = textBox4.Text;
-                   dataGridView2.DataSource= g.Grdlistbyid();
+                   dataGridView2.DataSource= g.Grdlistbyid(Gid);
                     a.Cclose();
                 textBox4.Text = null;
                 radioButton2.Checked = false;

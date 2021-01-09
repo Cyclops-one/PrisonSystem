@@ -67,7 +67,7 @@ namespace Prisoner
                 //string sql = "Select * from Prisoners where PrisonerID ='" + textBox3.Text + "'";
                 Criminal cr = new Criminal();
                 Id = txtbox.Text;
-                dataGridView1.DataSource = cr.Listbyid();
+                dataGridView1.DataSource = cr.Listbyid(Id);
                 a.Cclose();
                
 

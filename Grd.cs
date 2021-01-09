@@ -72,9 +72,9 @@ namespace Prisoner
             return Allgrd("Select * from Guards");
             
         }
-        public List<Grd> Grdlistbyid()
+        public List<Grd> Grdlistbyid(string Iid)
         {
-            return Allgrd("Select * from Guards where GuardID='"+ AdminPanel.Gid + "'");
+            return Allgrd("Select * from Guards where GuardID='"+ Iid + "'");
             
         }
     }
