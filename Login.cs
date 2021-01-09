@@ -138,6 +138,13 @@ namespace Prisoner
 
 
         }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            AdminPanel ad = new AdminPanel();
+            this.Hide();
+            ad.Show();
+        }
     }
 }
      

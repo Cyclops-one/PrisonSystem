@@ -18,7 +18,7 @@ namespace Prisoner
         public static string Cell;
         public static string Id;
         Access a;
-
+        Criminal cr = new Criminal();
         public AdManagePrisoner()
         {
             InitializeComponent();
@@ -110,11 +110,17 @@ namespace Prisoner
         private void AdManagePrisoner_Load(object sender, EventArgs e)
         {
             //a.Connection();
-            Criminal cr = new Criminal();
+            
            
             dataGridView1.DataSource = cr.Alllist();
+            comboBox2.DataSource = cr.Cell();
             a.Cclose();
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -185,35 +185,11 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "A11",
-            "B12",
-            "C13",
-            "D14",
-            "E15",
-            "F16",
-            "G17",
-            "H18",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T11",
-            "W",
-            "X",
-            "Y",
-            "Z"});
             this.comboBox2.Location = new System.Drawing.Point(223, 83);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(88, 21);
             this.comboBox2.TabIndex = 13;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // txtbox
             // 

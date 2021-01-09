@@ -51,6 +51,7 @@ namespace Prisoner
         {
 
             return Criminals("Select * from Prisoners where PrisonerID ='" + Cid + "'");
+            
         }
         public List<Criminal> Listbycell()
           {
@@ -90,6 +91,24 @@ namespace Prisoner
 
             return Boga;
             
+        }
+        public List<string> Enti()
+        {
+            SqlDataReader reader = this.ac.Receive("Select * from Prisoners");
+            List<string> Cols = new List<string>();
+            while (reader.Read())
+            {
+                Criminal p = new Criminal();
+
+                Cols.Add(p.CellNo = reader["CellNo"].ToString());
+            }
+            reader.Close();
+            return Cols;
+
+        }
+        public List<string> Cell()
+        {
+            return Enti();
         }
         public List<Criminal> Alllist()
         {

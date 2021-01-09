@@ -48,6 +48,25 @@ namespace Prisoner
             return gards;
 
         }
+        public List<string> Entities()
+        {
+            SqlDataReader reader = this.sa.Receive("Select * from Guards");
+            List<string> Cols = new List<string>();
+            while (reader.Read())
+            {
+                Grd p = new Grd();
+               
+                Cols.Add(p.Counselor=reader["Counselor"].ToString());
+            }
+            reader.Close();
+            return Cols;
+            
+        }
+      
+        public List<string> ColNames()
+        {
+            return Entities();
+        }
         public List<Grd> Grdlist()
         {
             return Allgrd("Select * from Guards");
@@ -56,7 +75,7 @@ namespace Prisoner
         public List<Grd> Grdlistbyid()
         {
             return Allgrd("Select * from Guards where GuardID='"+Gr+"'");
-
+            
         }
     }
 }

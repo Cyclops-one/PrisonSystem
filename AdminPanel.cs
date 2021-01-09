@@ -56,6 +56,7 @@ namespace Prisoner
         private void AdminPanel_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = g.Grdlist();
+            comboBox2.DataSource = g.ColNames();
             a.Cclose();
 
         }
@@ -110,15 +111,13 @@ namespace Prisoner
             
             //string choice = null;
             if (radioButton1.Checked)
-            
 
-                
-                {
-
+            { 
                     Pid = textBox4.Text;
-                    dataGridView1.DataSource = c.Listbyida();
+                    dataGridView2.DataSource = c.Listbyida();
                     a.Cclose();
                 textBox4.Text = null;
+                radioButton1.Checked = false;
                 }
                 
                 
@@ -129,17 +128,18 @@ namespace Prisoner
                 {
                     // button1_Click(sender,e);
                     Gid = textBox4.Text;
-                   dataGridView1.DataSource= g.Grdlistbyid();
+                   dataGridView2.DataSource= g.Grdlistbyid();
                     a.Cclose();
                 textBox4.Text = null;
-                }
+                radioButton2.Checked = false;
+            }
                
 
                
             
             else
             {
-                dataGridView1.DataSource = g.Grdlist();
+                dataGridView2.DataSource = g.Grdlist();
                 a.Cclose();
                 
             }
@@ -157,6 +157,11 @@ namespace Prisoner
             Login l = new Login();
             l.Show();
             this.Hide();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = g.Grdlist();
         }
     }
 }
