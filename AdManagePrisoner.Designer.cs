@@ -258,6 +258,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Blue;
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.button2);
@@ -272,6 +273,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -288,6 +290,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.RoyalBlue;
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.txtbox);
             this.groupBox3.Controls.Add(this.radioButton1);

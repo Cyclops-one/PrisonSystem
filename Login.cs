@@ -35,15 +35,15 @@ namespace Prisoner
              string query = "Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'";
              SqlCommand command = new SqlCommand(query, c);
              SqlDataReader reader = command.ExecuteReader();*/
-            SqlDataReader reader = this.a.Receive("Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'");
-            
-            
+            try { SqlDataReader reader = this.a.Receive("Select * from Login where AuthorID='" + textBox1.Text + "'and Password='" + textBox2.Text + "'");
+
+
                 if (!reader.HasRows)
                 {
 
 
                     MessageBox.Show("Incorrect Credentials");
-
+                    reader.Close();
                 }
                 else
                 {
@@ -51,46 +51,43 @@ namespace Prisoner
                     MessageBox.Show("Login successfull");
                     if (textBox1.Text == "Supervisor")
                     {
-                    string path = @"C: \Users\Satanic\Desktop\Empty\S.txt";
-                    FileInfo info = new FileInfo(path);
-                    DateTime lt = info.LastWriteTime;
-                    MessageBox.Show("Last Signed in"+lt.ToString());
+                        string path = @"C: \Users\Satanic\Desktop\Empty\S.txt";
+                        FileInfo info = new FileInfo(path);
+                        DateTime lt = info.LastWriteTime;
+                        MessageBox.Show("Last Signed in" + lt.ToString());
 
-                    this.Hide();
+                        this.Hide();
 
                         AdminPanel ad = new AdminPanel();
                         ad.Show();
-                    a.Cclose();
+                        a.Cclose();
                     }
                     else
                     {
-                    string path = @"C: \Users\Satanic\Desktop\Empty\" + textBox1.Text + ".txt";
-                    FileInfo info = new FileInfo(path);
-                    DateTime lt = info.LastWriteTime;
-                    
-                    Thread.Sleep(2000);
-                    MessageBox.Show("Last logged in" + lt.ToString());
-                    a.Cclose();
-                    Councelor = textBox1.Text;
+                        string path = @"C: \Users\Satanic\Desktop\Empty\" + textBox1.Text + ".txt";
+                        FileInfo info = new FileInfo(path);
+                        DateTime lt = info.LastWriteTime;
+
+                        Thread.Sleep(2000);
+                        MessageBox.Show("Last logged in" + lt.ToString());
+                        a.Cclose();
+                        Councelor = textBox1.Text;
                         Guard g = new Guard();
                         this.Hide();
                         g.Show();
                     }
-
-
-
 
                     reader.Close();
                     a.Cclose();
 
                 }
 
-
-                /*{
-                    MessageBox.Show("Database Mismatch Exception");
-                }*/
             }
-        
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void Login_Load(object sender, EventArgs e)
         {
